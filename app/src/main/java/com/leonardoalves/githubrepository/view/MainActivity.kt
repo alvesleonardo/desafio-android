@@ -1,7 +1,8 @@
-package com.leonardoalves.githubrepository
+package com.leonardoalves.githubrepository.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.leonardoalves.githubrepository.R
 
 class MainActivity : AppCompatActivity() {
 
