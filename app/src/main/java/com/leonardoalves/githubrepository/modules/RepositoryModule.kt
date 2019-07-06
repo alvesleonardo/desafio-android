@@ -11,8 +11,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-const val SERVER_URL = "https://api.themoviedb.org/4/"
-const val IMAGE_URL = "https://image.tmdb.org/t/p/w500"
+const val SERVER_URL = "https://api.github.com/"
 const val TIMEOUT = 120L
 
 private fun createOkHttpClient(): OkHttpClient {

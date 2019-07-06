@@ -11,16 +11,11 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 
-fun <T> RequestBuilder<T>.roundedCorners(context: Context, radius: Int = 4): RequestBuilder<T> {
-    val px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, radius.toFloat(), context.resources.displayMetrics)
-    return apply(RequestOptions().transforms(CenterCrop(), RoundedCorners(px.toInt())))
-}
-
-fun <T> RequestBuilder<T>.circleCrop(): RequestBuilder<T> {
+fun <T> RequestBuilder<T>.circleCropBuilder(): RequestBuilder<T> {
     return apply(RequestOptions().circleCrop())
 }
 
-fun <T> RequestBuilder<T>.centerCrop(): RequestBuilder<T> {
+fun <T> RequestBuilder<T>.centerCropBuilder(): RequestBuilder<T> {
     return apply(RequestOptions().centerCrop())
 }
 
