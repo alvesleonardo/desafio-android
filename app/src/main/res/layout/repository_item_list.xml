@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content">
+
+
+    <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/ivOwnerAvatar"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvUsername"
+            app:layout_constraintVertical_chainStyle="packed"/>
+    <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/ivOwnerAvatar"
+            app:layout_constraintEnd_toEndOf="@+id/ivOwnerAvatar"
+            app:layout_constraintStart_toStartOf="@+id/ivOwnerAvatar"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvUserFullName"
+            tools:text="@tools:sample/first_names"
+            app:layout_constraintHorizontal_bias="0.5"/>
+    <TextView
+            android:id="@+id/tvUserFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/tvUsername"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            tools:text="@tools:sample/full_names" app:layout_constraintTop_toBottomOf="@+id/tvUsername"
+            app:layout_constraintHorizontal_bias="0.5"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRepositoryName" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/ivOwnerAvatar"
+            android:layout_marginEnd="8dp"
+            tools:text="@tools:sample/lorem"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRepositoryDesc" app:layout_constraintEnd_toStartOf="@+id/ivOwnerAvatar"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvRepositoryName" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/ivStars"
+            tools:text="@tools:sample/lorem/random" android:maxLines="4" android:ellipsize="end"/>
+    <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp" app:srcCompat="@drawable/ic_code_fork"
+            android:id="@+id/ivFork" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvForks" app:layout_constraintStart_toEndOf="@+id/ivFork"
+            android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="@+id/ivFork"
+            app:layout_constraintTop_toTopOf="@+id/ivFork"/>
+    <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp" app:srcCompat="@drawable/ic_star_black_24dp"
+            android:id="@+id/ivStars"
+            app:layout_constraintStart_toEndOf="@+id/tvForks" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@+id/ivFork"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFork"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvStars"
+            app:layout_constraintTop_toTopOf="@+id/ivStars" app:layout_constraintBottom_toBottomOf="@+id/ivStars"
+            app:layout_constraintStart_toEndOf="@+id/ivStars" android:layout_marginStart="8dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

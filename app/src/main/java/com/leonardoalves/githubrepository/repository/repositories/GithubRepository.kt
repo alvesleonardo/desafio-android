@@ -1,6 +1,8 @@
 package com.leonardoalves.githubrepository.repository.repositories
 
 import com.leonardoalves.githubrepository.repository.GitHubApi
+import com.leonardoalves.githubrepository.repository.utils.onDefaultSchedulers
 
-class GithubRepository(val api: GitHubApi) {
+class GithubRepository(private val api: GitHubApi) {
+    fun getRepositoriesList(page: Int) = api.getRepositories(page).onDefaultSchedulers().map { it.items.orEmpty() }
 }
