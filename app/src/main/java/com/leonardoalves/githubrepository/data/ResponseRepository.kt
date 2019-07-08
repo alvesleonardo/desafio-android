@@ -3,7 +3,7 @@ package com.leonardoalves.githubrepository.data
 import com.google.gson.annotations.SerializedName
 import com.leonardoalves.githubrepository.data.entity.Repository
 
-data class ResponseRespository(
+data class ResponseRepository(
 
 	@field:SerializedName("total_count")
 	val totalCount: Int? = null,

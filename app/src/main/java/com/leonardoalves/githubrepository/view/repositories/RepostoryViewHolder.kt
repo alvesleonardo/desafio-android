@@ -24,6 +24,9 @@ class RepostoryViewHolder(itemView: View,  val onClickListener:Listener<Reposito
                 .circleCropBuilder()
                 .crossFade()
                 .into(ivOwnerAvatar)
+            setOnClickListener {
+                onClickListener.onClick(viewModel)
+            }
         }
     }
 

@@ -25,12 +25,12 @@ class RepositoriesPresenter(
                                 it!!.id,
                                 it.owner?.login ?: "",
                                 it.fullName ?: "",
-                                it.owner?.avatarUrl?:"",
-                                it.name?:"",
-                                it.description?:"",
-                                it.stargazersCount?:0,
+                                it.owner?.avatarUrl ?: "",
+                                it.name ?: "",
+                                it.description ?: "",
+                                it.stargazersCount ?: 0,
                                 it.forksCount
-                                )
+                            )
                         }
                 }
                 .doOnSubscribe { loading = true }
