@@ -3,6 +3,7 @@ package com.leonardoalves.githubrepository.view.pullrequests
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -66,6 +67,27 @@ class PullRequestsActivity : AppCompatActivity(), PullRequestsView {
         }
     }
 
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }else -> super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun setupToolbar(repositoryName: String) {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = repositoryName
+    }
+
+    override fun loading(loading: Boolean) {
+        srlPullRequests.isRefreshing = loading
+    }
+
     override fun setItems(items: List<ViewModel>, resetList: Boolean) {
         if (resetList){
             pullRequestsAdapter.setItems(items)
@@ -74,12 +96,4 @@ class PullRequestsActivity : AppCompatActivity(), PullRequestsView {
         }
     }
 
-    override fun onDestroy() {
-        presenter.onDestroy()
-        super.onDestroy()
-    }
-
-    override fun loading(loading: Boolean) {
-        srlPullRequests.isRefreshing = loading
-    }
 }

@@ -24,6 +24,7 @@ class PullRequestsPresenter(
     fun onCreate(intent: Intent){
         creator = intent.getStringExtra(PULL_REQUEST_CREATOR_EXTRA)
         repository = intent.getStringExtra(PULL_REQUEST_REPOSITORY_EXTRA)
+        repository?.let { pullRequestsView.setupToolbar(it) }
         getPullRepositoryList()
     }
 
