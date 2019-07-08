@@ -78,4 +78,8 @@ class PullRequestsActivity : AppCompatActivity(), PullRequestsView {
         presenter.onDestroy()
         super.onDestroy()
     }
+
+    override fun loading(loading: Boolean) {
+        srlPullRequests.isRefreshing = loading
+    }
 }

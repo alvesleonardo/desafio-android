@@ -33,10 +33,16 @@ class RepositoriesPresenter(
                             )
                         }
                 }
-                .doOnSubscribe { loading = true }
-                .doOnComplete { loading = false }
+                .doOnSubscribe {
+                    loading = true
+                    repositoriesView.loading(loading)
+                }
+                .doOnComplete {
+                    loading = false
+                    repositoriesView.loading(loading)
+                }
                 .subscribe({
-                    repositoriesView.setItems(it, page==1)
+                    repositoriesView.setItems(it, page == 1)
                     page++
                 }, {
                     loading = false

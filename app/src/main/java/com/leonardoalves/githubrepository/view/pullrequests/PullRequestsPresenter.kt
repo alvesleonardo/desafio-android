@@ -35,8 +35,8 @@ class PullRequestsPresenter(
                         PullRequestViewModel(it.title?:"", it.body?:"", it.user?.login?:"", "", it.user?.avatarUrl?:"", it.htmlUrl?:"http://github.com/$creator/$repository")
                     }
                 }
-                .doOnSubscribe { loading = true }
-                .doOnComplete { loading = false }
+                .doOnSubscribe { loading = true; pullRequestsView.loading(loading) }
+                .doOnComplete { loading = false; pullRequestsView.loading(loading) }
                 .subscribe({
                     pullRequestsView.setItems(it, page==1)
                     page++

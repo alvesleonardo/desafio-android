@@ -76,4 +76,8 @@ class RepositoriesActivity : AppCompatActivity(), RepositoriesView {
             repositoryAdapter.addItems(items)
         }
     }
+
+    override fun loading(loading: Boolean) {
+        srlRepositories.isRefreshing = loading
+    }
 }
